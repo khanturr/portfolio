@@ -1,21 +1,109 @@
-body {
-    font-family: Arial, sans-serif;
+/* General Reset */
+* {
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    box-sizing: border-box;
 }
 
-header {
-    background-color: #333;
-    color: white;
+body {
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    overflow: hidden;
+}
+
+.noise-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #0d0d0d;
+    animation: noise 0.2s infinite;
+    z-index: -1;
+}
+
+/* Animation for Noise Effect */
+@keyframes noise {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100vw 100vh;
+    }
+}
+
+/* Header and Main Content */
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
     text-align: center;
-    padding: 1em 0;
+    padding: 20px;
 }
 
-section {
-    margin: 2em;
-    padding: 1em;
-    background-color: white;
+header h1 {
+    font-size: 3rem;
+    letter-spacing: 3px;
+}
+
+header p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.button {
+    background-color: #ff6b6b;
+    padding: 10px 20px;
+    color: #fff;
+    border: none;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #ff4c4c;
+}
+
+/* Projects Section */
+section#projects {
+    padding: 50px;
+    background-color: #1a1a1a;
+    width: 100%;
+    text-align: center;
+}
+
+.projects-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.project-card {
+    background-color: #333;
+    padding: 20px;
+    margin: 10px;
+    width: 300px;
+    border-radius: 10px;
+}
+
+footer {
+    margin-top: 50px;
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .projects-grid {
+        flex-direction: column;
+    }
 }
